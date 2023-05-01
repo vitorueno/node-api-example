@@ -1,5 +1,4 @@
 const express = require('express');
-const { findOneAndDelete } = require('../models/Person');
 const router = express.Router();
 const Person = require('../models/Person');
 
