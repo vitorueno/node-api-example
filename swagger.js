@@ -3,4 +3,19 @@ const swaggerAutogen = require('swagger-autogen')()
 const outputFile = './swagger_output.json'
 const endpointsFiles = ['./src/index.js']
 
-swaggerAutogen(outputFile, endpointsFiles)
+const doc = {
+    definitions: {
+        Person: {
+            name: 'João da Silva',
+            email: 'joao@gmail.com',
+            phoneNumber: '47 987491294',
+            dateOfBirth: Date.now()
+        }
+    }
+}
+
+
+swaggerAutogen(outputFile, endpointsFiles, doc).then(() => {
+    console.log('criando documentação');
+    require('./src/index.js');
+})

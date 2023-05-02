@@ -13,6 +13,14 @@ router.get('/', async (req, res) => {
 
 
 router.post('/', async (req, res) => {
+    /* #swagger.parameters['obj'] = {
+            in: 'body',
+            description: 'Person information.',
+            required: true,
+            schema: { $ref: "#/definitions/Person" }
+        } 
+    */
+
     const person = new Person({
         name: req.body.name,
         email: req.body.email,
@@ -48,6 +56,13 @@ router.delete('/:personId', async (req, res) => {
 })
 
 router.put('/:personId', async (req, res) => {
+    /* #swagger.parameters['obj'] = {
+            in: 'body',
+            description: 'Person information.',
+            required: true,
+            schema: { $ref: "#/definitions/Person" }
+        } 
+    */
     try {
         const updatedPerson = await Person.findOneAndUpdate(req.params.personId, req.body);
         res.status(200).json(updatedPerson);

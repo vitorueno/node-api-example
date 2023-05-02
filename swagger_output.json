@@ -28,24 +28,12 @@
         "description": "",
         "parameters": [
           {
-            "name": "body",
+            "name": "obj",
             "in": "body",
+            "description": "Person information.",
+            "required": true,
             "schema": {
-              "type": "object",
-              "properties": {
-                "name": {
-                  "example": "any"
-                },
-                "email": {
-                  "example": "any"
-                },
-                "phoneNumber": {
-                  "example": "any"
-                },
-                "dateOfBirth": {
-                  "example": "any"
-                }
-              }
+              "$ref": "#/definitions/Person"
             }
           }
         ],
@@ -106,6 +94,15 @@
             "in": "path",
             "required": true,
             "type": "string"
+          },
+          {
+            "name": "obj",
+            "in": "body",
+            "description": "Person information.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Person"
+            }
           }
         ],
         "responses": {
@@ -115,6 +112,29 @@
           "400": {
             "description": "Bad Request"
           }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Person": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "example": "João da Silva"
+        },
+        "email": {
+          "type": "string",
+          "example": "joao@gmail.com"
+        },
+        "phoneNumber": {
+          "type": "string",
+          "example": "47 987491294"
+        },
+        "dateOfBirth": {
+          "type": "number",
+          "example": 1682987270055
         }
       }
     }
