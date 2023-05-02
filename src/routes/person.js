@@ -3,7 +3,9 @@ const router = express.Router();
 const Person = require('../models/Person');
 
 router.get('/', async (req, res) => {
-    // #swagger.description = 'retorna todos os usuários.'
+    /* #swagger.description = 'retorna todas as pessoas.'
+       #swagger.tags = ['Person']
+    */
     try {
         const people = await Person.find();
         res.status(200).json(people);
@@ -15,6 +17,7 @@ router.get('/', async (req, res) => {
 
 router.post('/', async (req, res) => {
     /*#swagger.description = 'modifica informação de uma pessoa específica'
+      #swagger.tags = ['Person']
       #swagger.parameters['obj'] = {
         in: 'body',
         description: 'Person information.',
@@ -41,6 +44,7 @@ router.post('/', async (req, res) => {
 
 router.get('/:personId', async (req, res) => {
     // #swagger.description = 'pega informação de uma pessoa específica'
+    // #swagger.tags = ['Person']
     try {
         const people = await Person.findById(req.params.personId);
         res.status(200).json(people);
@@ -51,6 +55,7 @@ router.get('/:personId', async (req, res) => {
 
 router.delete('/:personId', async (req, res) => {
     // #swagger.description = 'remove uma pessoa pelo ID do Mongo'
+    // #swagger.tags = ['Person']
     try {
         const removedPerson = await Person.findOneAndDelete({ _id: req.params.personId });
         res.status(200).json(removedPerson);
@@ -61,6 +66,7 @@ router.delete('/:personId', async (req, res) => {
 
 router.put('/:personId', async (req, res) => {
     /* #swagger.description = 'substitui as informações da pessoa com ID informado pelos dados do corpo' 
+      #swagger.tags = ['Person']
     #swagger.parameters['obj'] = {
             in: 'body',
             description: 'Person information.',

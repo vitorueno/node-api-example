@@ -4,6 +4,12 @@ const outputFile = './swagger_output.json'
 const endpointsFiles = ['./src/index.js']
 
 const doc = {
+    tags: [
+        {
+            "name": "Person",
+            "description": "Endpoints"
+        }
+    ],
     definitions: {
         Person: {
             name: 'João da Silva',
