@@ -13,7 +13,7 @@
   "paths": {
     "/person/": {
       "get": {
-        "description": "",
+        "description": "retorna todos os usuários.",
         "parameters": [],
         "responses": {
           "200": {
@@ -25,7 +25,7 @@
         }
       },
       "post": {
-        "description": "",
+        "description": "modifica informação de uma pessoa específica",
         "parameters": [
           {
             "name": "obj",
@@ -49,7 +49,7 @@
     },
     "/person/{personId}": {
       "get": {
-        "description": "",
+        "description": "pega informação de uma pessoa específica",
         "parameters": [
           {
             "name": "personId",
@@ -68,7 +68,7 @@
         }
       },
       "delete": {
-        "description": "",
+        "description": "remove uma pessoa pelo ID do Mongo",
         "parameters": [
           {
             "name": "personId",
@@ -87,7 +87,7 @@
         }
       },
       "put": {
-        "description": "",
+        "description": "substitui as informações da pessoa com ID informado pelos dados do corpo",
         "parameters": [
           {
             "name": "personId",
@@ -134,7 +134,7 @@
         },
         "dateOfBirth": {
           "type": "number",
-          "example": 1682987270055
+          "example": 1682988181375
         }
       }
     }
