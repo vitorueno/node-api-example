@@ -22,7 +22,7 @@
         "tags": [
           "Person"
         ],
-        "description": "retorna todos os usuários.",
+        "description": "retorna todas as pessoas cadastradas",
         "parameters": [],
         "responses": {
           "200": {
@@ -37,7 +37,7 @@
         "tags": [
           "Person"
         ],
-        "description": "modifica informação de uma pessoa específica",
+        "description": "cadastra uma pessoa com os dados do corpo da requisição",
         "parameters": [
           {
             "name": "obj",
@@ -64,7 +64,7 @@
         "tags": [
           "Person"
         ],
-        "description": "pega informação de uma pessoa específica",
+        "description": "retorna os dados de uma pessoa específica (ID do Mongo)",
         "parameters": [
           {
             "name": "personId",
@@ -155,7 +155,7 @@
         },
         "dateOfBirth": {
           "type": "number",
-          "example": 1682988434859
+          "example": 1683147928759
         }
       }
     }
